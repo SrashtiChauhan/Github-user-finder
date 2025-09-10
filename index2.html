@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub User Finder</title>
+
+  <!-- Tailwind CSS CDN (development only) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Animated gradient background */
+    .animated-bg {
+      background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #3a0ca3);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body class="min-h-screen animated-bg text-white font-sans relative overflow-x-hidden">
+
+  <!-- GitHub watermark overlay -->
+  <div class="absolute inset-0 pointer-events-none">
+    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+         alt="GitHub Background" 
+         class="w-full h-full object-cover opacity-5 scale-125">
+    <div class="absolute inset-0 bg-black/50"></div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="relative z-10 flex flex-col items-center px-4 py-12">
+
+    <!-- Header -->
+    <h1 class="text-5xl font-extrabold mb-2 tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-indigo-500 bg-clip-text text-transparent drop-shadow-lg">
+      GitHub User Finder
+    </h1>
+    <p class="text-gray-300 mb-10 text-lg">Search and view GitHub user profiles in style ✨</p>
+
+    <!-- Search Bar -->
+    <form class="w-full max-w-xl bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 flex items-center gap-3 shadow-xl">
+      <input 
+        type="text" 
+        placeholder="Enter GitHub username..." 
+        class="usernameinp flex-1 px-4 py-3 text-gray-200 bg-transparent border border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-400 focus:outline-none"
+      >
+      <button 
+        type="submit" 
+        class="search px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600 text-white font-semibold rounded-xl shadow-lg transition-all hover:scale-105"
+      >
+        Search
+      </button>
+    </form>
+
+    <!-- User Profile Card -->
+    <div class="w-full max-w-4xl mt-12">
+      <div class="card bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-2xl p-8 transition hover:shadow-blue-500/20">
+        <!-- Blank until search -->
+        <p class="text-center text-gray-400">🔍 Search for a GitHub user to see details...</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Link to script2.js -->
+<script src="script2.js"></script>
+
+</body>
+</html>
